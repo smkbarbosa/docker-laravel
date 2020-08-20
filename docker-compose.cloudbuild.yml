@@ -12,7 +12,7 @@ services:
         #     - DB_USERNAME=root
         #     - DB_PASSWORD=root
         volumes:
-            - .:/var/www
+            - ./src:/var/www
         networks:
             - app-network
         depends_on:
@@ -27,7 +27,7 @@ services:
         ports:
             - "8000:80"
         volumes:
-            - .:/var/www
+            - ./src:/var/www
         networks:
             - app-network
         depends_on:
@@ -42,7 +42,7 @@ services:
         ports:
             - "33006:3306"
         volumes:
-            - ./.docker/dbdata:/var/lib/mysql
+            - ./src/.docker/dbdata:/var/lib/mysql
         environment:
             - MYSQL_DATABASE=laravel
             - MYSQL_ROOT_PASSWORD=root
